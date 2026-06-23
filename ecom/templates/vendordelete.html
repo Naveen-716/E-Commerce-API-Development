@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="post">
+        {% csrf_token %}
+        <label for="">vendorname</label>
+        <input type="text" name="vendorname" value="{{a.vendorname}}" placeholder="ENTER THE VENDOR NAME">
+        <label for="">vendorid</label>
+        <input type="text" name="vendor_id" value="{{a.vendor_id}}" placeholder="ENTER THE VENDOR ID">
+        <label for="">email</label>
+        <input type="email" name="email" value="{{a.email}}" placeholder="ENTER THE MAIL">
+        <label for="">PASSWORD</label>
+        <input type="password" name="vendorpassword" value="{{a.vendorpassword}}" placeholder="ENTER THE PASSWORD">
+        <label for="">PRODUCT BROUGHT</label>
+        <input type="text" name="productbrought" value="{{a.productbrought}}" placeholder="ENTER THE PRODUCT">
+        <input type="submit" value="DELETE">
+    </form>
+</body>
+</html>

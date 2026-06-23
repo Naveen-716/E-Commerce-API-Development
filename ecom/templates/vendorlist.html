@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vendor Cards</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #f4f6f9;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 280px)); /* 🔹 bigger cards */
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 5px 14px rgba(0, 0, 0, 0.12);
+      padding: 18px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 18px;
+      color: #007BFF;
+      text-align: center;
+    }
+
+    .card p {
+      margin: 6px 0;
+      font-size: 14px;
+      color: #333;
+      line-height: 1.4;
+    }
+
+    .actions {
+      margin-top: 12px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .actions a {
+      text-decoration: none;
+      padding: 7px 12px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+
+    .update-btn {
+      background: #28a745;
+      color: white;
+    }
+
+    .update-btn:hover {
+      background: #218838;
+    }
+
+    .delete-btn {
+      background: #dc3545;
+      color: white;
+    }
+
+    .delete-btn:hover {
+      background: #c82333;
+    }
+  </style>
+</head>
+<body>
+  <div class="card-container">
+    {% for i in a %}
+    <div class="card">
+      <h3>{{i.vendorname}}</h3>
+      <p><strong>ID:</strong> {{i.vendor_id}}</p>
+      <p><strong>Email:</strong> {{i.email}}</p>
+      <p><strong>Password:</strong> {{i.vendorpassword}}</p>
+      <p><strong>Product Brought:</strong> {{i.productbrought}}</p>
+      <div class="actions">
+        <a href="/updatevendor/{{i.vendor_id}}" class="update-btn">UPDATE</a>
+        <a href="/deletevendor/{{i.vendor_id}}" class="delete-btn">DELETE</a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</body>
+</html>

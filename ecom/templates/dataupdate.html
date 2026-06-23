@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <form action="" method="post">
+        {% csrf_token %}
+        <label for="">Profile</label>
+        <input type="file" name="image" placeholder="select your image">
+        <label for="">Student Name</label>
+        <input type="text" name="student_name" value="{{a.student_name}}" placeholder="Enter the Name">
+        <label for="">class</label>
+        <input type="text" name="standard" value="{{a.standard}}" placeholder="Enter the Standard">
+        <label for="">DOJ</label>
+        <input type="date" name="doj" value="{{a.doj}}" placeholder="Enter the DOJ">
+        <input type="submit" value="UPDATE">
+    </form>
+</body>
+</html>

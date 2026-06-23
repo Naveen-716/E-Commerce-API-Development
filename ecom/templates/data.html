@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    img{
+        height: 100px;
+        width: 100px;
+    }
+</style>
+<body>
+    {% for i in s %}
+    <div>
+         <img src="{{ i.image.url }}" alt="">
+        <label for="">{{i.student_name}}</label>
+        <label for="">{{i.standard}}</label>
+        <label for="">{{i.doj}}</label>
+        <a href="/upstud/{{i.id}}">Update</a>
+    </div>
+    {% endfor %}
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Arial', sans-serif;
+      background: #f0f4f8;
+    }
+
+    .login-card {
+      width: 360px;
+      padding: 40px 30px;
+      border-radius: 15px;
+      background: #fff;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .login-card h2 {
+      margin-bottom: 30px;
+      color: #FF6F61; /* heading color */
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .input-group {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding-left: 12px;
+      background: #f9f9f9;
+      transition: 0.3s;
+    }
+
+    .input-group input {
+      border: none;
+      outline: none;
+      flex: 1;
+      padding: 12px 15px;
+      font-size: 14px;
+      background: transparent;
+    }
+
+    .input-group i {
+      font-size: 18px;
+      min-width: 22px;
+      text-align: center;
+      margin-right: 10px;
+      transition: 0.3s;
+    }
+
+    /* Icon colors */
+    .user-icon { color: #FF6F61; }      /* Coral */
+    .email-icon { color: #007BFF; }     /* Blue */
+    .lock-icon { color: #28A745; }      /* Green */
+
+    /* Input focus effect */
+    .input-group:focus-within {
+      border-color: #FF6F61;
+      box-shadow: 0 0 8px rgba(255,111,97,0.3);
+    }
+
+    .login-card input[type="submit"] {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 12px;
+      font-weight: bold;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+      background: linear-gradient(45deg, #FF6F61, #FFB75E);
+      box-shadow: 0 5px 15px rgba(255,111,97,0.4);
+      transition: all 0.3s ease;
+    }
+
+    .login-card input[type="submit"]:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(255,111,97,0.5);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-card">
+    <h2><i class="fas fa-user-shield user-icon"></i> Admin Login</h2>
+    <form action="/adminlogin" method="post">
+      {% csrf_token %}
+      <div class="input-group">
+        <i class="fas fa-envelope email-icon"></i>
+        <input type="email" name="email" placeholder="Enter your email" required>
+      </div>
+      <div class="input-group">
+        <i class="fas fa-lock lock-icon"></i>
+        <input type="password" name="password" placeholder="Enter your password" required>
+      </div>
+      <input type="submit" value="Login">
+    </form>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vendor Login</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f0f4f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .form-card {
+      width: 450px;
+      padding: 40px 30px;
+      border-radius: 15px;
+      background: #fff;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-card h2 {
+      text-align: center;
+      color: #FF6F61;
+      margin-bottom: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .input-group {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding-left: 12px;
+      background: #f9f9f9;
+      transition: 0.3s;
+      height: 50px;
+      margin-bottom: 15px; /* Equal spacing between inputs */
+    }
+
+    .input-group input {
+      border: none;
+      outline: none;
+      flex: 1;
+      padding: 0 15px;
+      font-size: 14px;
+      background: transparent;
+      height: 100%;
+    }
+
+    .input-group i {
+      font-size: 18px;
+      min-width: 22px;
+      text-align: center;
+      margin-right: 10px;
+    }
+
+    /* Icon colors */
+    .vendor-icon { color: #FF6F61; }
+    .id-icon { color: #007BFF; }
+    .email-icon { color: #6610F2; }
+    .password-icon { color: #FD7E14; }
+    .product-icon { color: #20c997; }
+
+    .input-group:focus-within {
+      border-color: #FF6F61;
+      box-shadow: 0 0 8px rgba(255,111,97,0.3);
+    }
+
+    input[type="submit"] {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 12px;
+      font-weight: bold;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+      background: linear-gradient(45deg, #FF6F61, #FFB75E);
+      box-shadow: 0 5px 15px rgba(255,111,97,0.4);
+      transition: all 0.3s ease;
+      margin-top: 10px;
+    }
+
+    input[type="submit"]:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(255,111,97,0.5);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-card">
+    <h2><i class="fas fa-user-tie vendor-icon"></i> Vendor Login</h2>
+    <form action="/vendorlog" method="post">
+      {% csrf_token %}
+      <div class="input-group"><i class="fas fa-user vendor-icon"></i><input type="text" name="vendorname" placeholder="Enter Vendor Name"></div>
+      <div class="input-group"><i class="fas fa-id-badge id-icon"></i><input type="text" name="vendor_id" placeholder="Enter Vendor ID"></div>
+      <div class="input-group"><i class="fas fa-envelope email-icon"></i><input type="email" name="email" placeholder="Enter Email"></div>
+      <div class="input-group"><i class="fas fa-lock password-icon"></i><input type="password" name="vendorpassword" placeholder="Enter Password"></div>
+      <div class="input-group"><i class="fas fa-box product-icon"></i><input type="text" name="productbrought" placeholder="Enter Product Brought"></div>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+</body>
+</html>

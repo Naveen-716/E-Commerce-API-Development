@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Update Staff</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f0f4f8;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 40px;
+      min-height: 100vh;
+    }
+
+    .form-card {
+      width: 450px;
+      padding: 40px 30px;
+      border-radius: 15px;
+      background: #fff;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-card h2 {
+      text-align: center;
+      color: #FF6F61;
+      margin-bottom: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .input-group {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding-left: 12px;
+      background: #f9f9f9;
+      transition: 0.3s;
+      height: 50px; /* equal height for all input boxes */
+      margin-bottom: 15px; /* spacing between inputs */
+    }
+
+    .input-group input {
+      border: none;
+      outline: none;
+      flex: 1;
+      padding: 0 15px;
+      font-size: 14px;
+      background: transparent;
+      height: 100%;
+    }
+
+    .input-group i {
+      font-size: 18px;
+      min-width: 22px;
+      text-align: center;
+      margin-right: 10px;
+    }
+
+    /* Icon colors */
+    .id-icon { color: #FF6F61; }
+    .name-icon { color: #007BFF; }
+    .username-icon { color: #28A745; }
+    .email-icon { color: #6610F2; }
+    .password-icon { color: #FD7E14; }
+
+    .input-group:focus-within {
+      border-color: #FF6F61;
+      box-shadow: 0 0 8px rgba(255,111,97,0.3);
+    }
+
+    input[type="submit"] {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 12px;
+      font-weight: bold;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+      background: linear-gradient(45deg, #FF6F61, #FFB75E);
+      box-shadow: 0 5px 15px rgba(255,111,97,0.4);
+      transition: all 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(255,111,97,0.5);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-card">
+    <h2><i class="fas fa-user-edit"></i> Update Staff</h2>
+    <form action="/staff_update" method="post">
+      {% csrf_token %}
+      <div class="input-group"><i class="fas fa-hashtag id-icon"></i><input type="text" name="staff_id" value="{{a.staff_id}}" placeholder="Enter the Staff ID"></div>
+      <div class="input-group"><i class="fas fa-user name-icon"></i><input type="text" name="name" value="{{a.name}}" placeholder="Enter the Name"></div>
+      <div class="input-group"><i class="fas fa-user-tag username-icon"></i><input type="text" name="username" value="{{a.username}}" placeholder="Enter the Username"></div>
+      <div class="input-group"><i class="fas fa-envelope email-icon"></i><input type="text" name="email" value="{{a.email}}" placeholder="Enter the Email"></div>
+      <div class="input-group"><i class="fas fa-lock password-icon"></i><input type="password" name="password" value="{{a.password}}" placeholder="Enter the Password"></div>
+      <input type="submit" value="UPDATE">
+    </form>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Staff Management</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f0f2f5;
+    }
+
+    /* Top navbar */
+    nav {
+      background: #0d6efd;
+      color: #fff;
+      padding: 15px 30px;
+      font-size: 20px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    nav i {
+      margin-right: 10px;
+    }
+
+    /* Main container */
+    .container {
+      max-width: 1000px;
+      margin: 50px auto;
+      text-align: center;
+      padding: 0 15px;
+    }
+
+    .container h1 {
+      font-size: 28px; /* slightly smaller heading */
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .container p {
+      font-size: 14px; /* slightly smaller text */
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    /* Menu grid */
+    .menu {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .menu a {
+      text-decoration: none;
+      color: white;
+      padding: 15px;       /* reduced from 25px */
+      border-radius: 12px;
+      font-size: 16px;     /* smaller font */
+      font-weight: 600;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;            /* reduced gap between icon and text */
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      min-height: 120px;   /* reduced from 150px */
+    }
+
+    .menu a i {
+      font-size: 24px;     /* smaller icon */
+    }
+
+    /* Colors */
+    .menu a.existing { background: #673ab7; } /* Deep Purple */
+    .menu a.new { background: #009688; }       /* Teal */
+    .menu a.current { background: #ff5722; }   /* Deep Orange */
+
+    /* Hover effect */
+    .menu a:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    }
+
+    /* Responsive text scaling */
+    @media (max-width: 500px) {
+      .container h1 { font-size: 24px; }
+      .container p { font-size: 13px; }
+      .menu a { font-size: 14px; padding: 12px; min-height: 100px; }
+      .menu a i { font-size: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <i class="fa-solid fa-users"></i> Staff Management
+  </nav>
+
+  <div class="container">
+    <h1>Welcome to Staff Management</h1>
+    
+
+    <div class="menu">
+      <a href="/editproduct" class="existing">
+        <i class="fa-solid fa-right-to-bracket"></i>
+        Product Management
+      </a>
+      <a href="/stafflog" class="new">
+        <i class="fa-solid fa-user-plus"></i>
+        New Staff (Signup)
+      </a>
+      <a href="/staffview" class="current">
+        <i class="fa-solid fa-users"></i>
+        Current Staff
+      </a>
+    </div>
+  </div>
+</body>
+</html>

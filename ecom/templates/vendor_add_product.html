@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Form</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f0f4f8;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 40px;
+      min-height: 100vh;
+    }
+
+    .form-card {
+      width: 900px;
+      padding: 30px 40px;
+      border-radius: 15px;
+      background: #fff;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    .form-card h2 {
+      text-align: center;
+      color: #FF6F61;
+      margin-bottom: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .input-group {
+      display: flex;
+      align-items: center;
+      flex: 1 1 45%;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding-left: 12px;
+      background: #f9f9f9;
+      transition: 0.3s;
+    }
+
+    .input-group input,
+    .input-group select {
+      border: none;
+      outline: none;
+      flex: 1;
+      padding: 12px 15px;
+      font-size: 14px;
+      background: transparent;
+    }
+
+    .input-group i {
+      font-size: 18px;
+      min-width: 22px;
+      text-align: center;
+      margin-right: 10px;
+      transition: 0.3s;
+    }
+
+    /* Icon colors */
+    .id-icon { color: #FF6F61; }           
+    .name-icon { color: #007BFF; }        
+    .vendor-icon { color: #28A745; }      
+    .brand-icon { color: #FFC107; }       
+    .desc-icon { color: #6F42C1; }        
+    .category-icon { color: #20C997; }    
+    .price-icon { color: #FD7E14; }       
+    .date-icon { color: #6610F2; }        
+    .quantity-icon { color: #0D6EFD; }    
+    .image-icon { color: #E83E8C; }       
+    .created-icon { color: #198754; }     
+
+    .input-group:focus-within {
+      border-color: #FF6F61;
+      box-shadow: 0 0 8px rgba(255,111,97,0.3);
+    }
+
+    input[type="submit"] {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 12px;
+      font-weight: bold;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+      background: linear-gradient(45deg, #FF6F61, #FFB75E);
+      box-shadow: 0 5px 15px rgba(255,111,97,0.4);
+      transition: all 0.3s ease;
+      margin-top: 20px;
+    }
+
+    input[type="submit"]:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(255,111,97,0.5);
+    }
+
+    @media(max-width: 800px) {
+      .input-group {
+        flex: 1 1 100%;
+      }
+      .form-card {
+        width: 100%;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-card">
+    <h2><i class="fas fa-box-open"></i> Add Product</h2>
+    <form action="" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="input-group"><i class="fas fa-hashtag id-icon"></i><input type="number" name="product_id" placeholder="Product ID"></div>
+      <div class="input-group"><i class="fas fa-tag name-icon"></i><input type="text" name="product_name" placeholder="Product Name"></div>
+      <div class="input-group"><i class="fas fa-user vendor-icon"></i><input type="text" name="vendor_name" placeholder="Vendor Name"></div>
+      <div class="input-group"><i class="fas fa-industry brand-icon"></i><input type="text" name="vendor_product_brand" placeholder="Product Brand"></div>
+      <div class="input-group"><i class="fas fa-align-left desc-icon"></i><input type="text" name="describtion" placeholder="Description"></div>
+      <div class="input-group"><i class="fas fa-list category-icon"></i><input type="text" name="category" placeholder="Category"></div>
+      <div class="input-group"><i class="fas fa-dollar-sign price-icon"></i><input type="text" name="price" placeholder="Price"></div>
+      <div class="input-group"><i class="fas fa-calendar-alt date-icon"></i><input type="date" name="manufacture_date"></div>
+      <div class="input-group"><i class="fas fa-sort-numeric-up quantity-icon"></i><input type="text" name="available_quantity" placeholder="Quantity"></div>
+      <div class="input-group"><i class="fas fa-image image-icon"></i><input type="file" name="image"></div>
+      <div class="input-group"><i class="fas fa-clock date-icon"></i><input type="datetime-local" name="uploaded_at"></div>
+      <div class="input-group"><i class="fas fa-user-check created-icon"></i><input type="text" name="created_by" placeholder="Created By"></div>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+
+</body>
+</html>

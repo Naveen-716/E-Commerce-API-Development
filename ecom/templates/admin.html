@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/adminlogin" method="post">
+        {% csrf_token %}
+        <h1>ADMIN A/C CREATE</h1>
+        <label for="">name</label>
+        <input type="text" name="name" placeholder="ENTER THE NAME">
+        <label for="">email</label>
+        <input type="email" name="email" placeholder="ENTER THE EMAIL">
+        <label for="">password</label>
+        <input type="password" name="password" placeholder="ENTER THE PASSWORD">
+        <input type="submit" value="submit">
+        <h1>{{message}}</h1>
+    </form>
+</body>
+</html>

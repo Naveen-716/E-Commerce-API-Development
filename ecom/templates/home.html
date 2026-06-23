@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #f0f4f8; 
+    }
+
+    #login-container {
+      text-align: center;
+    }
+
+    a {
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: bold;
+      padding: 12px 30px;
+      color: #fff;
+      background: linear-gradient(45deg, #FF6F61, #FFB75E); /* Button gradient */
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    a:hover {
+      background: linear-gradient(45deg, #FFB75E, #FF6F61);
+      transform: translateY(-2px);
+    }
+
+    /* Icon color */
+    i {
+      font-size: 20px;
+      color: #fff; /* White icon */
+      transition: color 0.3s;
+    }
+
+    a:hover i {
+      color: #ffe6d9; /* Slightly different color on hover */
+    }
+  </style>
+</head>
+<body>
+
+  <div id="login-container">
+    <a href="/adminlogin">
+      <i class="fas fa-user-shield"></i>
+      ADMIN LOGIN
+    </a>
+  </div>
+
+</body>
+</html>

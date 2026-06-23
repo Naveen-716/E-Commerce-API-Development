@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Staff Login</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .card {
+      background: #fff;
+      padding: 25px 30px;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .card h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .input-group {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .icon {
+      padding: 12px;
+      color: #fff;
+      min-width: 45px;
+      text-align: center;
+    }
+
+    .input-field {
+      flex: 1;
+    }
+
+    .input-field input {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      outline: none;
+      font-size: 14px;
+    }
+
+    /* Different colors for each field */
+    .staff-id { background: #6f42c1; }
+    .name { background: #20c997; }
+    .username { background: #fd7e14; }
+    .email { background: #0d6efd; }
+    .password { background: #dc3545; }
+
+    .submit-btn {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background: #198754;
+      color: #fff;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .submit-btn:hover {
+      background: #146c43;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>Staff Registration</h2>
+    <form action="/stafflog" method="post">
+      {% csrf_token %}
+      
+      <div class="input-group">
+        <div class="icon staff-id"><i class="fa-solid fa-id-card"></i></div>
+        <div class="input-field"><input type="text" name="staff_id" placeholder="Enter the Staff ID"></div>
+      </div>
+      
+      <div class="input-group">
+        <div class="icon name"><i class="fa-solid fa-user"></i></div>
+        <div class="input-field"><input type="text" name="name" placeholder="Enter the Name"></div>
+      </div>
+      
+      <div class="input-group">
+        <div class="icon username"><i class="fa-solid fa-user-tag"></i></div>
+        <div class="input-field"><input type="text" name="username" placeholder="Enter the Username"></div>
+      </div>
+      
+      <div class="input-group">
+        <div class="icon email"><i class="fa-solid fa-envelope"></i></div>
+        <div class="input-field"><input type="text" name="email" placeholder="Enter the Email"></div>
+      </div>
+      
+      <div class="input-group">
+        <div class="icon password"><i class="fa-solid fa-lock"></i></div>
+        <div class="input-field"><input type="password" name="password" placeholder="Enter the Password"></div>
+      </div>
+      
+      <input type="submit" value="Submit" class="submit-btn">
+    </form>
+  </div>
+</body>
+</html>

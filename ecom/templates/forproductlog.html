@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Form</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .login-form-container {
+      background: #fff;
+      padding: 30px 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 320px;
+    }
+
+    .login-form-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #fd7e14; /* orange lock icon color */
+    }
+    .login-form-container h2 i {
+      color: #fd7e14;
+      margin-right: 8px;
+    }
+
+    .login-form-container label {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 14px;
+      color: #333;
+    }
+
+    /* Input wrapper */
+    .input-icon {
+      position: relative;
+      margin-bottom: 15px;
+    }
+
+    /* Icons with different colors */
+    .input-icon .fa-envelope {
+      color: #0d6efd; /* blue for email */
+    }
+    .input-icon .fa-key {
+      color: #198754; /* green for password */
+    }
+
+    /* Input fields */
+    .input-icon input {
+      width: 100%;
+      padding: 10px 12px 10px 35px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+      box-sizing: border-box;
+    }
+
+    /* Icon inside input */
+    .input-icon i {
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%);
+    }
+
+    /* Submit button with green color */
+    .login-form-container input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      background: #198754; /* green button */
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.3s;
+    }
+
+    .login-form-container input[type="submit"]:hover {
+      background: #157347; /* darker green on hover */
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 480px) {
+      .login-form-container {
+        width: 90%;
+        padding: 25px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-form-container">
+    <h2><i class="fa-solid fa-lock"></i> Login</h2>
+    <form action="/product_log" method="post">
+      {% csrf_token %}
+      <div class="input-icon">
+        <i class="fa-solid fa-envelope"></i>
+        <input type="email" name="email" placeholder="Enter your email" required>
+      </div>
+      <div class="input-icon">
+        <i class="fa-solid fa-key"></i>
+        <input type="password" name="password" placeholder="Enter your password" required>
+      </div>
+      <input type="submit" value="Login">
+    </form>
+  </div>
+
+</body>
+</html>

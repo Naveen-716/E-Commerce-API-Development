@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Product Card</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f9;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 40px 20px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      padding: 30px 25px;
+      width: 400px;
+      max-width: 95%;
+    }
+
+    .card h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #0d6efd;
+    }
+
+    .input-icon {
+      position: relative;
+      margin-bottom: 15px;
+    }
+
+    .input-icon input,
+    .input-icon select {
+      width: 100%;
+      padding: 10px 12px 10px 35px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+      box-sizing: border-box;
+    }
+
+    .input-icon i {
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%);
+      font-size: 16px;
+    }
+
+    /* Icon colors */
+    .icon-id { color: #0d6efd; }       /* blue */
+    .icon-name { color: #198754; }     /* green */
+    .icon-desc { color: #fd7e14; }     /* orange */
+    .icon-category { color: #6f42c1; } /* purple */
+    .icon-price { color: #dc3545; }    /* red */
+    .icon-date { color: #0dcaf0; }     /* cyan */
+    .icon-qty { color: #ffc107; }      /* yellow */
+    .icon-image { color: #795548; }    /* brown */
+
+    input[type="submit"] {
+      width: 100%;
+      padding: 12px;
+      background: #0d6efd;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.3s;
+      margin-top: 10px;
+    }
+    input[type="submit"]:hover {
+      background: #0b5ed7;
+    }
+
+    @media (max-width: 480px) {
+      .card {
+        width: 90%;
+        padding: 25px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2><i class="fa-solid fa-box"></i> Add Product</h2>
+    <form action="add_product" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+
+      <div class="input-icon">
+        <i class="fa-solid fa-hashtag icon-id"></i>
+        <input type="number" name="product_id" placeholder="Enter product ID" required>
+      </div>
+
+      <div class="input-icon">
+        <i class="fa-solid fa-tag icon-name"></i>
+        <input type="text" name="product_name" placeholder="Enter product name" required>
+      </div>
+
+      <div class="input-icon">
+        <i class="fa-solid fa-file-lines icon-desc"></i>
+        <input type="text" name="describtion" placeholder="Enter description" required>
+      </div>
+
+      <div class="input-icon">
+        <i class="fa-solid fa-list icon-category"></i>
+        <input type="text" name="category" placeholder="Enter category" required>
+      </div>
+
+      <div class="input-icon">
+        <i class="fa-solid fa-dollar-sign icon-price"></i>
+        <input type="text" name="price" placeholder="Enter price" required>
+      </div>
+
+      <div class="input-icon">
+        <i class="fa-solid fa-calendar-days icon-date"></i>
+        <input type="date" name="manufacture_date" required>
+      </div>
+
+      <div class="input-icon">
+        <i class="fa-solid fa-boxes-packing icon-qty"></i>
+        <input type="text" name="available_quantity" placeholder="Enter quantity" required>
+      </div>
+
+      <div class="input-icon">
+        <i class="fa-solid fa-image icon-image"></i>
+        <input type="file" name="image" required>
+      </div>
+
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+
+</body>
+</html>
